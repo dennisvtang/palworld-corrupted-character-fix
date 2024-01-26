@@ -44,7 +44,7 @@ A player's GUID can be determined through the map's `level.sav` file.
 The bug prevents the user from holding left click to continuously swing.
 
 The issue appears to be caused by the corrupted player's `player_uid`/`GUID` being linked to multiple `instance_ids` in level.sav. Once in the player's data structure and again in a guild's data structure. This can be fixed by replacing the instance in the guild data structure to match the player's new instance id.
-
+- Shutdown server
 - Open `level.sav.json` search for corrupted player's old `InstanceId`. There should only be one result. It should be in the "individual_character_handle_ids" section of a guild's section. An example of this is shown below.
 ![alt text](/res/sample_guild_character_ids_section.png)
 - Replace that `InstanceId` with the `InstanceId` from the newly created `.sav.json` file from before
@@ -67,4 +67,5 @@ The issue appears to be caused by the corrupted player's `player_uid`/`GUID` bei
 
 # Credits
 - cheahjs for creating [palworld-save-tools](https://github.com/cheahjs/palworld-save-tools)
-- People in this [thread](https://steamcommunity.com/app/1623730/discussions/0/4132682727131950820/?ctp=4#:~:text=Izumemori-,Jan%2022%20%40%201%3A15pm,-3), specifically Izumemori for explaining the glitch and process of recovering everything, but the player level and status.
+- People in this [thread](https://steamcommunity.com/app/1623730/discussions/0/4132682727131950820/?ctp=4#:~:text=Izumemori-,Jan%2022%20%40%201%3A15pm,-3), specifically Izumemori for explaining the glitch and process of recovering everything, but the player level and status.- People in this [thread](https://steamcommunity.com/app/1623730/discussions/0/4132682727131950820/?ctp=4#:~:text=Izumemori-,Jan%2022%20%40%201%3A15pm,-3), specifically Izumemori for explaining the glitch and process of recovering everything, but the player level and status.
+When someone leaves the guild I think the games "refreshes" the list of people on the server. People experiencing the glitch are missing their main chunk of player data from level.sav
