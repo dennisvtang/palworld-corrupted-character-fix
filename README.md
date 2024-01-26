@@ -28,9 +28,9 @@ A player's GUID can be determined through the map's `level.sav` file.
 
 
 # Recover almost everything except the player's level and stats
+- Shutdown server
 - Using the `player_uid`/`GUID` identified in the previous section locate their save file.
 - Temporarily move the corrupted save file somewhere and have the player join the server and create a character. Remember players always have the same `player_uid`/`GUID`.
-- Shutdown server
 - Convert the newly created `.sav` file to json with with [palworld-save-tools](https://github.com/cheahjs/palworld-save-tools)
 - Search for `InstanceId` and copy the value for `Guid` thats there
 - Convert the old `.sav` file to json with [palworld-save-tools](https://github.com/cheahjs/palworld-save-tools)
